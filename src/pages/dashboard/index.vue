@@ -6,7 +6,7 @@
 
 <script setup>
 defineOptions({
-  name: 'Index'
+  name: 'Dashboard'
 })
 </script>
 

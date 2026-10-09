@@ -54,7 +54,7 @@ onMounted(() => {
 })
 
 const posterMovie = function(movie) {
-  return 'https://image.tmdb.org/t/p/w220_and_h330_face/' + movie.poster_path
+  return movieStore.posterPath + movie.poster_path
 }
 </script>
 

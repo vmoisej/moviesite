@@ -7,10 +7,14 @@ export const useMoviesStore = defineStore('movies', {
         movies: [],
         searchMovies: [],
         movie: {},
+        posterPath: 'https://image.tmdb.org/t/p/w220_and_h330_face/',
         TMDB_TOKEN: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNTRlZWMyZjgwYTM0YjdlZTcyZTRmZTRjODFhYmNmMiIsIm5iZiI6MTc5MTE5NDQwNC44NzY5OTk5LCJzdWIiOiI2YWMzNzUyNDJlZmVlYTNiYmEyYTY4MzciLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.TgzW-z_nahMckDXm3FOFMCtM6slSx9GBj0Ip5YoAFbk'
     }),
 
     getters: {
+        postTitle: (state) => 'GETTERS:' + state.post.title,
+        watchedMovies: (state) => state.movies.filter(postItem => postItem.is_watched === true),
+        ratingMovie: (state) => state.movie.vote_average ? state.movie.vote_average.toFixed(1) + ' ( ' + state.movie.vote_count + ' Проголосувало )' : ''
     },
 
     actions: {

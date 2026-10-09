@@ -15,7 +15,7 @@
         <table class="w-full border border-gray-200">
           <tbody>
             <tr>
-              <td class="bg-white border-b border-gray-200 text-left p-2">Найменування:</td>
+              <td class="bg-white border-b border-gray-200 text-left p-2 w-3/12">Найменування:</td>
               <td class="bg-white border-b border-gray-200 text-left p-2">{{ movie.title }}</td>
             </tr>
             <tr>
@@ -36,7 +36,7 @@
             </tr>
             <tr>
               <td class="bg-white border-b border-gray-200 text-left p-2">Середній рейтинг:</td>
-              <td class="bg-white border-b border-gray-200 text-left p-2 rating">⭐ {{ movie.vote_average }} ( {{ movie.vote_count }} Проголосувало )</td>
+              <td class="bg-white border-b border-gray-200 text-left p-2 rating">⭐ {{ movieStore.ratingMovie }}</td>
             </tr>
           </tbody>
         </table>
@@ -57,6 +57,9 @@ const movieStore = useMoviesStore()
 const movie = computed(
     () => movieStore.movie ? movieStore.movie : {}
 )
+// const movieRating = computed(
+//     () => movieStore.movie.vote_average ? movieStore.movie.vote_average.toFixed(1) + ' ( ' + movieStore.movie.vote_count + ' Проголосувало )' : ''
+// )
 
 onMounted(() => {
   movieStore.getMovie()
